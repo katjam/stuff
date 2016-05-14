@@ -11,8 +11,8 @@ alias ll='ls -lash'
 # with full path (\w)
 #PS1="\[\e[1;34m\]\u\[\e[1;33m\]\w\[\033[m\]\[\e[1;35m\]($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "
 
-# with current dir only (\W) blue yellow magenta white
-PS1="\[\e[1;34m\]\u \[\e[1;33m\]\W\[\033[m\]\[\e[1;35m\]($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "
+# with current dir only (\W)
+PS1="\[\e[1;94m\]\u \[\e[1;33m\]\W\[\033[m\]\[\e[1;32m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "
 
 
 PATH="/usr/bin/:/usr/local/bin:/usr/local/bin/Shell-tools:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/katja/.gem/ruby/2.1.0/bin"
