@@ -8,6 +8,30 @@
 alias ls='ls --color=auto'
 alias ll='ls -lash'
 
+#cottage ansibles
+alias pulldbcm='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=cm_live --extra-vars="local=/home/katja/public_html/coppermines" --vault-password-file ~/.vault-pass.txt --tags=db ~/public_html/ntdr-pas/pull.yml'
+alias pulldbfilescm='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=cm_live --extra-vars="local=/home/katja/public_html/coppermines" --vault-password-file ~/.vault-pass.txt --tags=db,filesync ~/public_html/ntdr-pas/pull.yml'
+alias pulldbhh='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=hh_live --extra-vars="local=/home/katja/public_html/homefromhome" --vault-password-file ~/.vault-pass.txt --tags=db ~/public_html/ntdr-pas/pull.yml'
+alias pulldbfileshh='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=hh_live --extra-vars="local=/home/katja/public_html/homefromhome" --vault-password-file ~/.vault-pass.txt --tags=db,filesync ~/public_html/ntdr-pas/pull.yml'
+alias pulldbbr='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=br_live --extra-vars="local=/home/katja/public_html/breconcottages" --vault-password-file ~/.vault-pass.txt --tags=db ~/public_html/ntdr-pas/pull.yml'
+alias pulldbfilesbr='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=br_live --extra-vars="local=/home/katja/public_html/breconcottages" --vault-password-file ~/.vault-pass.txt --tags=db,filesync ~/public_html/ntdr-pas/pull.yml'
+alias pulldbch='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=ch_live --extra-vars="local=/home/katja/public_html/countryhideaways" --vault-password-file ~/.vault-pass.txt --tags=db ~/public_html/ntdr-pas/pull.yml'
+alias pulldbfilesch='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=ch_live --extra-vars="local=/home/katja/public_html/countryhideaways" --vault-password-file ~/.vault-pass.txt --tags=db,filesync ~/public_html/ntdr-pas/pull.yml'
+alias pulldblb='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=lb_live --extra-vars="local=/home/katja/public_html/LymeBayHolidays" --vault-password-file ~/.vault-pass.txt --tags=db ~/public_html/ntdr-pas/pull.yml'
+alias pulldbfileslb='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=lb_live --extra-vars="local=/home/katja/public_html/LymeBayHolidays" --vault-password-file ~/.vault-pass.txt --tags=db,filesync ~/public_html/ntdr-pas/pull.yml'
+alias pulldbbr='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=br_live --extra-vars="local=/home/katja/public_html/breconcottages" --vault-password-file ~/.vault-pass.txt --tags=db ~/public_html/ntdr-pas/pull.yml'
+alias pulldbfilesbr='ansible-playbook -i ~/public_html/ntdr-pas/inventory/cottage-servers --limit=br_live --extra-vars="local=/home/katja/public_html/breconcottages" --vault-password-file ~/.vault-pass.txt --tags=db,filesync ~/public_html/ntdr-pas/pull.yml'
+
+
+alias neonvpn='sudo openvpn ~/etc/vpn/neontribe.ovpn'
+
+#read markdown with pandoc and lynx
+alias readmarkdown='pandoc $1 | lynx'
+
+#resize JPG images in a directory to 500px wide
+alias resize500='for file in *.JPG; do convert $file -resize 500 $file; done;'
+
+
 # with full path (\w)
 #PS1="\[\e[1;34m\]\u\[\e[1;33m\]\w\[\033[m\]\[\e[1;35m\]($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "
 
@@ -15,10 +39,14 @@ alias ll='ls -lash'
 PS1="\[\e[1;94m\]\u \[\e[1;33m\]\W\[\033[m\]\[\e[1;32m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "
 
 
-PATH="/usr/bin/:/usr/local/bin:/usr/local/bin/Shell-tools:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/katja/.gem/ruby/2.1.0/bin"
+PATH="/usr/bin/:/usr/local/bin:/usr/local/bin/Shell-tools:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/katja/.gem/ruby/2.1.0/bin:/home/katja/.composer/vendor/bin"
 export PATH
 
-# added by travis gem
+export LC_ALL="en_GB.utf8"
+export LANG="en_GB.utf8"
+export VISUAL="vim"
+
+ #added by travis gem
 [ -f /home/katja/.travis/travis.sh ] && source /home/katja/.travis/travis.sh
 
 # \d : the date in "Weekday Month Date" format (e.g., "Tue May 26")
@@ -47,3 +75,7 @@ export PATH
 # \\ : a backslash
 # \[ : begin a sequence of non-printing characters, which could be used to embed a terminal control sequence into the prompt
 # \] : end a sequence of non-printing characters
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
