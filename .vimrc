@@ -43,6 +43,7 @@ NeoBundle 'vim-scripts/scratch.vim'
 NeoBundle 'Raimondi/delimitMate/'
 NeoBundle 'FredKSchott/CoVim.git'
 NeoBundle "Shougo/neocomplete.vim"
+NeoBundle "stephpy/vim-php-cs-fixer"
 " NeoBundle "Townk/vim-autoclose"
 " NERDTree & Commenter
 NeoBundle "scrooloose/nerdcommenter"
@@ -63,6 +64,8 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'wlangstroth/vim-haskell'
 NeoBundle 'hspec/hspec.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'elm-vim/elm-vim'
+NeoBundle 'vim-vue/vim-vue'
 " Colors
 NeoBundle "chriskempson/vim-tomorrow-theme"
 NeoBundle "vim-scripts/xoria256.vim"
@@ -366,4 +369,11 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" If this is php - run the PSR2 codesniffer before we get started.
+autocmd BufReadPost *.php call PhpCsFixerFixFile()
+" And again before we save - this one resets changes - BUG.
+autocmd BufWritePost *.php call PhpCsFixerFixFile()
 
+" let g:php_cs_fixer_verbose = 1
+
+let g:elm_format_autosave = 1
