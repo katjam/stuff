@@ -47,6 +47,9 @@ Plugin 'morhetz/gruvbox'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'elmcast/elm-vim'
 
+"Flow
+Plugin 'flowtype/vim-flow'
+
 " Required:
 call vundle#end()
 
@@ -69,12 +72,12 @@ set go-=L " Removes left hand scroll bar
 set linespace=15
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
-set tabstop=4                   " a tab is four spaces
+set tabstop=2                   " a tab is four spaces
 set smarttab
 set tags=tags
 set softtabstop=2               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=4                " number of spaces to use for autoindenting
+set shiftwidth=2                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set smartindent
@@ -316,4 +319,15 @@ let g:php_cs_fixer_php_path = "php"               " Path to PHP
 let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
 let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
 let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+
+" Flow
+"Use locally installed flow
+let local_flow = finddir('node_modules', '.;') . '/.bin/flow'
+if matchstr(local_flow, "^\/\\w") == ''
+    let local_flow= getcwd() . "/" . local_flow
+endif
+if executable(local_flow)
+  let g:flow#flowpath = local_flow
+endif
+let g:flow#errjmp = 0  " Do not jump to error after type checking
 
