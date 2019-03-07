@@ -15,7 +15,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-dispatch'
-Plugin 'edsono/vim-matchit'
+" Plugin 'edsono/vim-matchit'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -42,13 +42,18 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-syntastic/syntastic'
 " Theme
 Plugin 'morhetz/gruvbox'
-
+" Rainbow parens
+Plugin 'luochen1990/rainbow'
 " Elm
-Plugin 'lambdatoast/elm.vim'
+"Plugin 'lambdatoast/elm.vim'
 Plugin 'elmcast/elm-vim'
-
 "Flow
 Plugin 'flowtype/vim-flow'
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
+" Vue
+Plugin 'posva/vim-vue'
+
 
 " Required:
 call vundle#end()
@@ -72,12 +77,12 @@ set go-=L " Removes left hand scroll bar
 set linespace=15
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
-set tabstop=2                   " a tab is four spaces
+set tabstop=4                   " a tab is four spaces
 set smarttab
 set tags=tags
-set softtabstop=2               " when hitting <BS>, pretend like a tab is removed, even if spaces
+set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=2                " number of spaces to use for autoindenting
+set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set smartindent
@@ -308,6 +313,13 @@ let g:elm_jump_to_error = 0
 let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 0
 let g:elm_setup_keybindings = 1
+
+" Rainbow parens
+let g:rainbow_active=1 "0 if you want to enable it later via :RainbowToggle
+let g:rainbow_conf = {
+\  'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\  'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta']
+\}
 
 " php-cs-fixer
 let g:php_cs_fixer_rules = "@PSR2"
