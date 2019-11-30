@@ -7,7 +7,8 @@
 
 alias ls='ls --color=auto'
 alias ll='ls -lash'
-alias ci3lock="i3lock -c 003366"
+alias ci3lock="i3lock -c 000000"
+alias chrome='chromium'
 
 #alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/etc/openvpn/neontribe.conf'
 alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/neontribe2.ovpn'
