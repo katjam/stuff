@@ -54,7 +54,6 @@ Plugin 'elixir-editors/vim-elixir'
 " Vue
 Plugin 'posva/vim-vue'
 
-
 " Required:
 call vundle#end()
 

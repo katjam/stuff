@@ -13,6 +13,10 @@ alias chrome='chromium'
 #alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/etc/openvpn/neontribe.conf'
 alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/neontribe2.ovpn'
 alias phpunit='./vendor/bin/phpunit'
+alias scanpng='scanimage --device "pixma:04A91770_30B5AF" --format=png >'
+alias scanjpg='scanimage --device "pixma:04A91770_30B5AF" --format=jpeg >'
+alias grepsrc='grep -r --exclude-dir=storage --exclude-dir=node_modules --exclude-dir=vendor --exclude-dir=.git --exclude-dir=build'
+
 
 # with full path (\w)
 #PS1="\[\e[1;34m\]\u\[\e[1;33m\]\w\[\033[m\]\[\e[1;35m\]($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "
@@ -25,7 +29,7 @@ LS_COLORS=$LS_COLORS:'di=0;93:' ; export LS_COLORS
 
 FONT="pango:monospace 10"
 
-PATH="/home/katja/.local/bin:/usr/bin/:/usr/local/bin:/usr/local/bin/Shell-tools:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/katja/.config/composer/vendor/bin:/home/katja/.gem/ruby/2.5.0/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:/usr/local/anaconda/bin"
+PATH="/home/katja/.local/bin:/usr/bin/:/usr/local/bin:/usr/local/bin/Shell-tools:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/katja/.config/composer/vendor/bin:/home/katja/.gem/ruby/2.5.0/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:/usr/local/anaconda/bin:$HOME/.symfony/bin"
 export PATH
 
 # added by travis gem
