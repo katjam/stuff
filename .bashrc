@@ -9,6 +9,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lash'
 alias ci3lock="i3lock -c 000000"
 alias chrome='chromium'
+alias poetry='~/.poetry/bin/poetry'
 
 #alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/etc/openvpn/neontribe.conf'
 alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/neontribe2.ovpn'
@@ -17,6 +18,15 @@ alias scanpng='scanimage --device "pixma:04A91770_30B5AF" --format=png >'
 alias scanjpg='scanimage --device "pixma:04A91770_30B5AF" --format=jpeg >'
 alias grepsrc='grep -r --exclude-dir=storage --exclude-dir=node_modules --exclude-dir=vendor --exclude-dir=.git --exclude-dir=build'
 
+# Start ssh-agent NOT working 
+#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+#fi
+#if [[ ! "$SSH_AUTH_SOCK" ]]; then
+#    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+#fi
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # with full path (\w)
 #PS1="\[\e[1;34m\]\u\[\e[1;33m\]\w\[\033[m\]\[\e[1;35m\]($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "

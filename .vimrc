@@ -53,6 +53,10 @@ Plugin 'flowtype/vim-flow'
 Plugin 'elixir-editors/vim-elixir'
 " Vue
 Plugin 'posva/vim-vue'
+" Svelte
+Plugin 'burner/vim-svelte'
+" ale (for npx eslint)
+Plugin 'w0rp/ale'
 
 " Required:
 call vundle#end()
@@ -342,3 +346,10 @@ if executable(local_flow)
 endif
 let g:flow#errjmp = 0  " Do not jump to error after type checking
 
+" Ale
+let g:ale_fixers = {}
+"let g:ale_fixers.javascript = ['eslint', 'prettier']
+let g:ale_fixers.javascript = ['eslint']
+let g:ale_fixers.typescript = ['eslint', 'prettier']
+let g:ale_fix_on_save = 1
+let g:ale_linters = {'typescript': ['eslint'], 'javascript': ['eslint']}
