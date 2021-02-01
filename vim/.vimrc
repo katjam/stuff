@@ -66,7 +66,7 @@ call vundle#end()
 " BEGIN CONFIG
 filetype plugin indent on
 syntax enable
-set shell=/bin/zsh
+set shell=/bin/bash
 set history=1000
 set undolevels=1000
 set mouse=a

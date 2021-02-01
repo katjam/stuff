@@ -81,7 +81,7 @@ Xft.hintstyle:              hintslight
 !URxvt.font: xft:Serto Kharput:bold:size=12
 !URxvt.font: xft:JosefinSans-regular:size=12
 !URxvt.font: xft:Inconsolata:size=11
-URxvt.font: xft:Anonymous Pro:size=11
+URxvt.font: xft:Hack:size=12
 
 !
 !# scrollbar - true (default) or false

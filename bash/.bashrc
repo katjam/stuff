@@ -11,8 +11,6 @@ alias ci3lock="i3lock -c 000000"
 alias chrome='chromium'
 alias poetry='~/.poetry/bin/poetry'
 
-#alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/etc/openvpn/neontribe.conf'
-alias neonvpn='sudo openvpn $HOME/Neontribe/openvpn/neontribe2.ovpn'
 alias phpunit='./vendor/bin/phpunit'
 alias scanpng='scanimage --device "pixma:04A91770_30B5AF" --format=png >'
 alias scanjpg='scanimage --device "pixma:04A91770_30B5AF" --format=jpeg >'
@@ -27,6 +25,9 @@ alias grepsrc='grep -r --exclude-dir=storage --exclude-dir=node_modules --exclud
 #fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# Add keys in a list e.g.
+#eval $(keychain --eval --quiet hujam id_rsa katjam)
+eval $(keychain --eval --quiet hujam)
 
 # with full path (\w)
 #PS1="\[\e[1;34m\]\u\[\e[1;33m\]\w\[\033[m\]\[\e[1;35m\]($(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0;37m\]\$ "
@@ -37,7 +38,7 @@ PS1="\[\e[1;12m\]\u \[\e[1;33m\]\W\[\033[m\]\[\e[1;32m\](\$(git branch 2>/dev/nu
 
 LS_COLORS=$LS_COLORS:'di=0;93:' ; export LS_COLORS
 
-FONT="pango:monospace 10"
+FONT="pango:hack"
 
 PATH="/home/katja/.local/bin:/usr/bin/:/usr/local/bin:/usr/local/bin/Shell-tools:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/katja/.config/composer/vendor/bin:/home/katja/.gem/ruby/2.5.0/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:/usr/local/anaconda/bin:$HOME/.symfony/bin"
 export PATH
@@ -71,15 +72,10 @@ export PATH
 # \\ : a backslash
 # \[ : begin a sequence of non-printing characters, which could be used to embed a terminal control sequence into the prompt
 # \] : end a sequence of non-printing characters
-source /usr/share/nvm/init-nvm.sh
 
 # git bash-completion
 source /usr/share/git/completion/git-completion.bash
 
-if [ -f ~/.config/exercism/exercism_completion.bash ]; then
-  . ~/.config/exercism/exercism_completion.bash
-fi
-
-# For cordova
-ANDROID_HOME=$HOME/Android/Sdk
-JAVA_HOME=/usr/lib/jvm/default
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
