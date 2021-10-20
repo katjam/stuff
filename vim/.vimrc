@@ -30,7 +30,7 @@ Plugin 'vim-scripts/scratch.vim'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 " Snippets
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 " Filetypes
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'othree/html5-syntax.vim'
@@ -351,5 +351,7 @@ let g:ale_fixers = {}
 "let g:ale_fixers.javascript = ['eslint', 'prettier']
 let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.typescript = ['eslint', 'prettier']
+let g:ale_fixers.vue = ['eslint']
 let g:ale_fix_on_save = 1
 let g:ale_linters = {'typescript': ['eslint'], 'javascript': ['eslint']}
+"let g:ale_linters = {'typescript': ['eslint'], 'javascript': ['eslint'], 'elm': ['elm_ls']}
